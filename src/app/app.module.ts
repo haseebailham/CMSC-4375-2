@@ -14,12 +14,18 @@ import { NewUserComponent } from './new-user/new-user.component';
 import {ServiceComponent} from './service/service.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ReactiveFormsModule} from '@angular/forms';
+import { LocationPageComponent } from './location-page/location-page.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { AboutPageComponent } from './about-page/about-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewUserComponent,
-    ServiceComponent
+    ServiceComponent,
+    LocationPageComponent,
+    SearchBarComponent,
+    AboutPageComponent
   ],
   imports: [
     BrowserModule,
