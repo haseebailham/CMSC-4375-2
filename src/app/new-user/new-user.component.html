@@ -1,0 +1,8 @@
+<!--adds user-->
+<div [formGroup]="newUserForm">
+  First Name: <input formControlName="firstName"><br>
+  Last Name: <input formControlName="lastName"><br>
+  Email: <input formControlName="email"><br>
+  <input type="button" (click)="onClickAddButton(newUserForm.value)" value = "Add User">
+</div>
+

@@ -10,17 +10,35 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { environment } from '../environments/environment';
+import { NewUserComponent } from './new-user/new-user.component';
+import {ServiceComponent} from './service/service.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ReactiveFormsModule} from '@angular/forms';
+import { LocationPageComponent } from './location-page/location-page.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { AboutPageComponent } from './about-page/about-page.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NewUserComponent,
+    ServiceComponent,
+    LocationPageComponent,
+    SearchBarComponent,
+    AboutPageComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig,'lab3'),
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'lab3'),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
