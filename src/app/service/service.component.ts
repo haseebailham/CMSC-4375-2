@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
 
 @Component({
@@ -9,11 +9,11 @@ import {AngularFirestore} from '@angular/fire/firestore';
 export class ServiceComponent {
   private value: any;
 
-  constructor(public database: AngularFirestore) {}
+  constructor(public database: AngularFirestore) {
+  }
 
 
-
-  getUser(userId){
+  getUser(userId) {
     return this.database.collection('users').doc(userId).snapshotChanges();
   }
 
@@ -22,11 +22,11 @@ export class ServiceComponent {
   //   return this.database.collection('users').doc(userId).set(value);
   // }
 
-  deleteUser(userId){
+  deleteUser(userId) {
     return this.database.collection('users').doc(userId).delete();
   }
 
-  getUsers(){
+  getUsers() {
     return this.database.collection('users').snapshotChanges();
   }
 
@@ -41,7 +41,7 @@ export class ServiceComponent {
   // }
 
 
-  createUser(value){
+  createUser(value) {
     return this.database.collection('users').add({
       name: value.name,
       surname: value.surname,

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, FormControl} from '@angular/forms';
+import {Router} from '@angular/router';
 import {Service} from '../service';
+
 @Component({
   selector: 'app-new-user',
   templateUrl: './new-user.component.html',
@@ -9,9 +10,11 @@ import {Service} from '../service';
 })
 export class NewUserComponent implements OnInit {
   newUserForm: FormGroup;
-  constructor( private formBuilder: FormBuilder,
-               // private router: Router,
-               public fbService: Service) { }
+
+  constructor(private formBuilder: FormBuilder,
+              // private router: Router,
+              public fbService: Service) {
+  }
 
   ngOnInit() {
     this.newUserForm = this.formBuilder.group({
@@ -20,7 +23,8 @@ export class NewUserComponent implements OnInit {
       email: ['']
     });
   }
-  nextUser(){
+
+  nextUser() {
     this.newUserForm = this.formBuilder.group({
       firstName: new FormControl(''),
       lastName: new FormControl(''),
@@ -28,7 +32,9 @@ export class NewUserComponent implements OnInit {
     });
   }
 
-  onClickAddButton(value){
-    this.fbService.createUser(value).then(r => {this.nextUser(); });
+  onClickAddButton(value) {
+    this.fbService.createUser(value).then(r => {
+      this.nextUser();
+    });
   }
 }

@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import {Injectable} from '@angular/core';
+import {AngularFirestore} from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -7,11 +7,11 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class Service {
   private value: any;
 
-  constructor(public database: AngularFirestore) {}
+  constructor(public database: AngularFirestore) {
+  }
 
 
-
-  getUser(userId){
+  getUser(userId) {
     return this.database.collection('users').doc(userId).snapshotChanges();
   }
 
@@ -20,11 +20,14 @@ export class Service {
   //   return this.database.collection('users').doc(userId).set(value);
   // }
 
-  deleteUser(userId){
-    return this.database.collection('users').doc(userId).delete();
+  deleteUser(data) {
+    return this.database
+      .collection('users')
+      .doc(data.payload.doc.id)
+      .delete();
   }
 
-  getUsers(){
+  getUsers() {
     return this.database.collection('users').snapshotChanges();
   }
 
@@ -39,7 +42,7 @@ export class Service {
   // }
 
 
-  createUser(value){
+  createUser(value) {
     return this.database.collection('users').add({
       firstName: value.firstName,
       lastName: value.lastName,

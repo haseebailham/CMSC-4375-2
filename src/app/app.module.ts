@@ -17,6 +17,8 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { LocationPageComponent } from './location-page/location-page.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { AboutPageComponent } from './about-page/about-page.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { AboutPageComponent } from './about-page/about-page.component';
     ServiceComponent,
     LocationPageComponent,
     SearchBarComponent,
-    AboutPageComponent
+    AboutPageComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { AboutPageComponent } from './about-page/about-page.component';
     AngularFireAuthModule,
     AngularFireStorageModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
