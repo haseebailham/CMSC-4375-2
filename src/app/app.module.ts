@@ -19,6 +19,15 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SurveyComponent } from './survey/survey.component';
+import { RouterModule, Routes } from '@angular/router';
+
+
+const appRoutes: Routes = [
+  { path: 'survey', component: SurveyComponent },
+  { path: 'about',      component: AboutPageComponent },
+  { path: 'locations',      component: LocationPageComponent }
+];
 
 @NgModule({
   declarations: [
@@ -28,7 +37,8 @@ import { AppRoutingModule } from './app-routing.module';
     LocationPageComponent,
     SearchBarComponent,
     AboutPageComponent,
-    UserListComponent
+    UserListComponent,
+    SurveyComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +48,9 @@ import { AppRoutingModule } from './app-routing.module';
     AngularFireStorageModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(
+      appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
