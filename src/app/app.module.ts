@@ -19,6 +19,10 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SurveyComponent } from './survey/survey.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { AppRoutingModule } from './app-routing.module';
     LocationPageComponent,
     SearchBarComponent,
     AboutPageComponent,
-    UserListComponent
+    UserListComponent,
+    SurveyComponent,
+    LoginComponent,
+    RegisterComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
