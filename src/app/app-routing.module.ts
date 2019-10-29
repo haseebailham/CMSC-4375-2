@@ -16,7 +16,9 @@ const routes: Routes = [
   { path: 'locations',      component: LocationPageComponent },
   { path: 'faq',      component: QuestionFormComponent },
   { path: 'home',      component: HomeComponent },
-  { path: 'feedback',      component: FeedbackComponent }
+  { path: 'feedback',      component: FeedbackComponent },
+  { path: 'register',      component: RegisterComponent },
+  { path: 'login',      component: LoginComponent }
 ];
 
 @NgModule({
