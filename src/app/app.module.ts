@@ -22,7 +22,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { SurveyComponent } from './survey/survey.component';
 import { RouterModule, Routes } from '@angular/router';
 import { QuestionFormComponent } from './question-form/question-form.component';
+import {AuthserviceService} from './shared/authservice.service';
+import {LoginComponent} from './login/login.component';
+import {RegisterComponent} from './register/register.component';
+import {UserComponent} from './user/user.component';
+import {MatFormFieldModule, MatInputModule, MatSelectModule} from '@angular/material';
+import * as firebase from 'firebase';
 
+firebase.initializeApp(environment.firebaseConfig);
 
 const appRoutes: Routes = [
   { path: 'survey', component: SurveyComponent },
@@ -40,7 +47,10 @@ const appRoutes: Routes = [
     AboutPageComponent,
     UserListComponent,
     SurveyComponent,
-    QuestionFormComponent
+    QuestionFormComponent,
+    LoginComponent,
+    RegisterComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,9 +63,12 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     AppRoutingModule,
     RouterModule.forRoot(
-      appRoutes)
+      appRoutes),
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ],
-  providers: [],
+  providers: [AuthserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
