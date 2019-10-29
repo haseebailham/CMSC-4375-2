@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-
+//comment
 // Firebase
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -29,6 +29,7 @@ import {RegisterComponent} from './register/register.component';
 import {UserComponent} from './user/user.component';
 import {MatFormFieldModule, MatInputModule, MatSelectModule} from '@angular/material';
 import * as firebase from 'firebase';
+import { FilterPipe } from './filter.pipe';
 
 firebase.initializeApp(environment.firebaseConfig);
 
@@ -56,7 +57,8 @@ firebase.initializeApp(environment.firebaseConfig);
     FeedbackComponent,
     LoginComponent,
     RegisterComponent,
-    UserComponent
+    UserComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

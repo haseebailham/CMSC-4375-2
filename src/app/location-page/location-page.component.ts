@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LocationPageComponent implements OnInit {
 
+  // Local data for search in Locations page:
+  dataset = ['Bali, Indonesia', 'Dubai, UAE', 'Srinagar, India', 'Crete, Greece', 'Rome, Italy',
+    'Copenhagen, Denmark', 'Interlaken, Switzerland', 'Miami, US', 'Cancun, Mexico',
+    'Alberta, Canada', 'Anchorage, US'];
+
   constructor() { }
 
   ngOnInit() {
