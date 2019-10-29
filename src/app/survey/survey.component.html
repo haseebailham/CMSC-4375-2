@@ -1,1 +1,55 @@
-<p>survey works!</p>
+<p>{{question1}}</p>
+<div>
+  <input type = "radio"
+         name = "continent"
+         value="{{answers1[0]}}"
+         (change)="answer1Event($event)">{{answers1[0]}}
+
+  <input type = "radio"
+         name = "continent"
+         value="{{answers1[1]}}"
+         (change)="answer1Event($event)">{{answers1[1]}}
+
+  <input type = "radio"
+         name = "continent"
+         value="{{answers1[2]}}"
+         (change)="answer1Event($event)">{{answers1[2]}}
+
+
+  <p>{{question2}}</p>
+
+  <input type = "radio"
+         name = "climate"
+         value="{{answers2[0]}}"
+         (change)="answer2Event($event)">{{answers2[0]}}
+
+  <input type = "radio"
+         name = "climate"
+         value="{{answers2[1]}}"
+         (change)="answer2Event($event)">{{answers2[1]}}
+
+
+
+
+  <p>{{question3}}</p>
+
+  <input type = "radio"
+         name = "price"
+         value="{{answers3[0]}}"
+         (change)="answer3Event($event)">{{answers3[0]}}
+
+  <input type = "radio"
+         name = "price"
+         value="{{answers3[1]}}"
+         (change)="answer3Event($event)">{{answers3[1]}}
+
+
+  <br>
+  <br>
+  <button (click)="onVacationButtonClick()">Decide Vacation</button>
+  <br>
+  The location you should go to is :
+  <h1>
+    {{vacation}}
+  </h1>
+</div>
