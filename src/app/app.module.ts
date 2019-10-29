@@ -22,19 +22,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { SurveyComponent } from './survey/survey.component';
 import { RouterModule, Routes } from '@angular/router';
 import { QuestionFormComponent } from './question-form/question-form.component';
-import {AuthserviceService} from './shared/authservice.service';
-import {LoginComponent} from './login/login.component';
-import {RegisterComponent} from './register/register.component';
-import {UserComponent} from './user/user.component';
-import {MatFormFieldModule, MatInputModule, MatSelectModule} from '@angular/material';
-import * as firebase from 'firebase';
+import { HomeComponent } from './home/home.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
-firebase.initializeApp(environment.firebaseConfig);
 
 const appRoutes: Routes = [
   { path: 'survey', component: SurveyComponent },
   { path: 'about',      component: AboutPageComponent },
-  { path: 'locations',      component: LocationPageComponent }
+  { path: 'locations',      component: LocationPageComponent },
+  { path: 'faq',      component: QuestionFormComponent },
+  { path: 'home',      component: HomeComponent },
+  { path: 'feedback',      component: FeedbackComponent }
 ];
 
 @NgModule({
@@ -48,9 +46,8 @@ const appRoutes: Routes = [
     UserListComponent,
     SurveyComponent,
     QuestionFormComponent,
-    LoginComponent,
-    RegisterComponent,
-    UserComponent,
+    HomeComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,
@@ -63,12 +60,9 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     AppRoutingModule,
     RouterModule.forRoot(
-      appRoutes),
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule
+      appRoutes)
   ],
-  providers: [AuthserviceService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

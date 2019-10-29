@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, FormControl} from '@angular/forms';
-import {Router} from '@angular/router';
+import {Router, RouterModule} from '@angular/router';
 import {Service} from '../service';
 
 @Component({
@@ -12,7 +12,7 @@ export class NewUserComponent implements OnInit {
   newUserForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
-              // private router: Router,
+              private route: Router,
               public fbService: Service) {
   }
 
@@ -36,5 +36,6 @@ export class NewUserComponent implements OnInit {
     this.fbService.createUser(value).then(r => {
       this.nextUser();
     });
+    this.route.navigate(['/home']);
   }
 }
