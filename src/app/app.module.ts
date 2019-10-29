@@ -32,14 +32,14 @@ import * as firebase from 'firebase';
 
 firebase.initializeApp(environment.firebaseConfig);
 
-const appRoutes: Routes = [
-  { path: 'survey', component: SurveyComponent },
-  { path: 'about',      component: AboutPageComponent },
-  { path: 'locations',      component: LocationPageComponent },
-  { path: 'faq',      component: QuestionFormComponent },
-  { path: 'home',      component: HomeComponent },
-  { path: 'feedback',      component: FeedbackComponent }
-];
+// const appRoutes: Routes = [
+//   { path: 'survey', component: SurveyComponent },
+//   { path: 'about',      component: AboutPageComponent },
+//   { path: 'locations',      component: LocationPageComponent },
+//   { path: 'faq',      component: QuestionFormComponent },
+//   { path: 'home',      component: HomeComponent },
+//   { path: 'feedback',      component: FeedbackComponent }
+// ];
 
 @NgModule({
   declarations: [
@@ -68,8 +68,8 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    RouterModule.forRoot(
-      appRoutes),
+    // RouterModule.forRoot(
+    //   appRoutes),
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
