@@ -22,12 +22,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { SurveyComponent } from './survey/survey.component';
 import { RouterModule, Routes } from '@angular/router';
 import { QuestionFormComponent } from './question-form/question-form.component';
+import { HomeComponent } from './home/home.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 
 const appRoutes: Routes = [
   { path: 'survey', component: SurveyComponent },
   { path: 'about',      component: AboutPageComponent },
-  { path: 'locations',      component: LocationPageComponent }
+  { path: 'locations',      component: LocationPageComponent },
+  { path: 'faq',      component: QuestionFormComponent },
+  { path: 'home',      component: HomeComponent },
+  { path: 'feedback',      component: FeedbackComponent }
 ];
 
 @NgModule({
@@ -40,7 +45,9 @@ const appRoutes: Routes = [
     AboutPageComponent,
     UserListComponent,
     SurveyComponent,
-    QuestionFormComponent
+    QuestionFormComponent,
+    HomeComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,
