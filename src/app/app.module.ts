@@ -13,7 +13,7 @@ import { environment } from '../environments/environment';
 import { NewUserComponent } from './new-user/new-user.component';
 import {ServiceComponent} from './service/service.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LocationPageComponent } from './location-page/location-page.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { AboutPageComponent } from './about-page/about-page.component';
@@ -21,6 +21,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SurveyComponent } from './survey/survey.component';
 import { RouterModule, Routes } from '@angular/router';
+import { QuestionFormComponent } from './question-form/question-form.component';
 
 
 const appRoutes: Routes = [
@@ -38,10 +39,12 @@ const appRoutes: Routes = [
     SearchBarComponent,
     AboutPageComponent,
     UserListComponent,
-    SurveyComponent
+    SurveyComponent,
+    QuestionFormComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, 'lab3'),
     AngularFirestoreModule,
     AngularFireAuthModule,
