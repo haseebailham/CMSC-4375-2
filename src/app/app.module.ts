@@ -24,6 +24,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { QuestionFormComponent } from './question-form/question-form.component';
 import { HomeComponent } from './home/home.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import {LoginComponent} from './login/login.component';
+import {RegisterComponent} from './register/register.component';
+import {UserComponent} from './user/user.component';
+import {MatFormFieldModule, MatInputModule, MatSelectModule} from '@angular/material';
 
 
 const appRoutes: Routes = [
@@ -47,7 +51,10 @@ const appRoutes: Routes = [
     SurveyComponent,
     QuestionFormComponent,
     HomeComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    LoginComponent,
+    RegisterComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +67,10 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     AppRoutingModule,
     RouterModule.forRoot(
-      appRoutes)
+      appRoutes),
+ MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
