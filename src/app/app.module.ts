@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-
+//comment
 // Firebase
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -29,17 +29,18 @@ import {RegisterComponent} from './register/register.component';
 import {UserComponent} from './user/user.component';
 import {MatFormFieldModule, MatInputModule, MatSelectModule} from '@angular/material';
 import * as firebase from 'firebase';
+import { FilterPipe } from './filter.pipe';
 
 firebase.initializeApp(environment.firebaseConfig);
 
-const appRoutes: Routes = [
-  { path: 'survey', component: SurveyComponent },
-  { path: 'about',      component: AboutPageComponent },
-  { path: 'locations',      component: LocationPageComponent },
-  { path: 'faq',      component: QuestionFormComponent },
-  { path: 'home',      component: HomeComponent },
-  { path: 'feedback',      component: FeedbackComponent }
-];
+// const appRoutes: Routes = [
+//   { path: 'survey', component: SurveyComponent },
+//   { path: 'about',      component: AboutPageComponent },
+//   { path: 'locations',      component: LocationPageComponent },
+//   { path: 'faq',      component: QuestionFormComponent },
+//   { path: 'home',      component: HomeComponent },
+//   { path: 'feedback',      component: FeedbackComponent }
+// ];
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ const appRoutes: Routes = [
     FeedbackComponent,
     LoginComponent,
     RegisterComponent,
-    UserComponent
+    UserComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -68,8 +70,8 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    RouterModule.forRoot(
-      appRoutes),
+    // RouterModule.forRoot(
+    //   appRoutes),
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,

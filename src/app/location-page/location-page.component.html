@@ -1,1 +1,9 @@
-<p>location-page works!</p>
+<p> Location Page</p>
+<div class="md-form">
+  <input type="search" [(ngModel)]="searchText" placeholder="Search location here">
+</div>
+<ul *ngFor="let data of dataset | filter: searchText">
+  <li>{{data}}</li>
+</ul>
+
+
