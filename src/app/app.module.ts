@@ -28,7 +28,9 @@ import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {UserComponent} from './user/user.component';
 import {MatFormFieldModule, MatInputModule, MatSelectModule} from '@angular/material';
+import * as firebase from 'firebase';
 
+firebase.initializeApp(environment.firebaseConfig);
 
 const appRoutes: Routes = [
   { path: 'survey', component: SurveyComponent },
@@ -68,9 +70,9 @@ const appRoutes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(
       appRoutes),
- MatFormFieldModule,
+    MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
