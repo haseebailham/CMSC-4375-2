@@ -32,7 +32,7 @@ export class SurveyComponent {
     'Hot',
     'Cold'
   ];
-  vacation: 'x';
+  vacation: string;
 
   question3 = 'What price range are you looking at?';
   selectedAnswer3 = '';
