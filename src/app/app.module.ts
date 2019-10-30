@@ -30,6 +30,7 @@ import {UserComponent} from './user/user.component';
 import {MatFormFieldModule, MatInputModule, MatSelectModule} from '@angular/material';
 import * as firebase from 'firebase';
 import { FilterPipe } from './filter.pipe';
+import {FaqComponent} from "./faq-page/faq.component";
 
 firebase.initializeApp(environment.firebaseConfig);
 
@@ -52,6 +53,7 @@ firebase.initializeApp(environment.firebaseConfig);
     AboutPageComponent,
     UserListComponent,
     SurveyComponent,
+    FaqComponent,
     QuestionFormComponent,
     HomeComponent,
     FeedbackComponent,
