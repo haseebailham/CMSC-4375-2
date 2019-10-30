@@ -2,8 +2,8 @@ import {Component, OnInit} from "@angular/core";
 
 @Component({
   selector: 'app-faq-page',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './faq.component.html',
+  styleUrls: ['./faq.component.css']
 })
 export class FaqComponent implements OnInit {
   // @ts-ignore
