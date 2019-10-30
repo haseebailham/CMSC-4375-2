@@ -20,7 +20,6 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import {DialogComponent, SurveyComponent} from './survey/survey.component';
-import { RouterModule, Routes } from '@angular/router';
 import { QuestionFormComponent } from './question-form/question-form.component';
 import { HomeComponent } from './home/home.component';
 import { FeedbackComponent } from './feedback/feedback.component';
@@ -38,18 +37,15 @@ import {
 } from '@angular/material';
 import * as firebase from 'firebase';
 import { FilterPipe } from './filter.pipe';
-import {FaqComponent} from "./faq-page/faq.component";
+import {FaqComponent} from './faq-page/faq.component';
+import {BlogComponent} from './blog/blog.component';
+import {Blog1Component} from './blog/blog1/blog1.component';
+import {Blog2Component} from './blog/blog2/blog2.component';
+import {Blog3Component} from './blog/blog3/blog3.component';
+import {Blog4Component} from './blog/blog4/blog4.component';
 
 firebase.initializeApp(environment.firebaseConfig);
 
-// const appRoutes: Routes = [
-//   { path: 'survey', component: SurveyComponent },
-//   { path: 'about',      component: AboutPageComponent },
-//   { path: 'locations',      component: LocationPageComponent },
-//   { path: 'faq',      component: QuestionFormComponent },
-//   { path: 'home',      component: HomeComponent },
-//   { path: 'feedback',      component: FeedbackComponent }
-// ];
 
 @NgModule({
   declarations: [
@@ -70,7 +66,12 @@ firebase.initializeApp(environment.firebaseConfig);
     UserComponent,
     FilterPipe,
     UserComponent,
-    DialogComponent
+    DialogComponent,
+    BlogComponent,
+    Blog1Component,
+    Blog2Component,
+    Blog3Component,
+    Blog4Component
   ],
   imports: [
     BrowserModule,
@@ -82,8 +83,6 @@ firebase.initializeApp(environment.firebaseConfig);
     BrowserAnimationsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    // RouterModule.forRoot(
-    //   appRoutes),
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
