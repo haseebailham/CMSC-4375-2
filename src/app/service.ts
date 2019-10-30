@@ -41,6 +41,13 @@ export class Service {
   //   return this.db.collection('users',ref => ref.orderBy('age').startAt(value)).snapshotChanges();
   // }
 
+  getImageLink(locationID) {
+    return this.database.collection('images').doc(locationID).snapshotChanges();
+  }
+
+  getLocations() {
+    return this.database.collection('location').snapshotChanges();
+  }
 
   createUser(value) {
     return this.database.collection('users').add({
