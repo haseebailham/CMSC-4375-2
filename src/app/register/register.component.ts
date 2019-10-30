@@ -56,7 +56,7 @@ export class RegisterComponent {
     })
     // if login is successful we will go to home page (change to ?)
       .then(res => {
-          this.router.navigate(['']);
+          this.router.navigate(['/home']);
           console.log(res);
           this.errorMessage = '';
           this.successMessage = 'You have created and account!';
