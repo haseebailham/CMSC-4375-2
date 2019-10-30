@@ -8,3 +8,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
+  border-color: rgb(18, 31, 244);
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle{
+  color: rgb(32, 23, 244);
+  background-color: rgb(33, 35, 244);
+}
+
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+  background-color: rgba(4, 0, 255, 0.88)
+}

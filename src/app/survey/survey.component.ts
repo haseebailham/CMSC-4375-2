@@ -1,6 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Service} from '../service';
+import {Router} from '@angular/router';
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
+
+export interface DialogData {
+  vacation: 'x';
+}
 
 @Component({
   selector: 'app-survey',
@@ -9,7 +15,9 @@ import {Service} from '../service';
 })
 export class SurveyComponent {
   userAnswers = [];
-
+  public q1: any;
+  public q2: any;
+  public q3: any;
   question1 = 'Which continent do you want to travel to?';
   selectedAnswer1 = '';
   answers1 = [
@@ -24,7 +32,7 @@ export class SurveyComponent {
     'Hot',
     'Cold'
   ];
-  private vacation: string;
+  vacation: 'x';
 
   question3 = 'What price range are you looking at?';
   selectedAnswer3 = '';
@@ -32,41 +40,28 @@ export class SurveyComponent {
     '$-$$',
     '$$$-$$$$'
   ];
-  questions = [this.question1, this.question2, this.question3];
-  answers = [this.answers1, this.answers2, this.answers3];
 
-  answersForm = new FormGroup({
-    answer1: new FormControl(''),
-    answer2: new FormControl(''),
-  });
-  answer1Form: FormGroup;
-  private locList;
+  private locationList;
   private locToGo;
 
   constructor(
-    private fb: FormBuilder, private service: Service
+    private fb: FormBuilder, private service: Service, private router: Router, public dialog: MatDialog
   ) {
-    this.createForm();
     this.getLocations();
   }
 
   getLocations = () => {
     return this.service
       .getLocations()
-      .subscribe(res => (this.locList = res));
+      .subscribe(res => (this.locationList = res));
   }
+
   getLocationByName(locName) {
     return this.service
       .getLocationByName(locName)
       .subscribe(res => (this.locToGo = res));
   }
-  createForm() {
-    this.answer1Form = this.fb.group({
-      answer11: ['', Validators.required],
-      answer12: ['', Validators.required],
-      answer13: ['', Validators.required]
-    });
-  }
+
 
   answer1Event(event: any) {
     this.selectedAnswer1 = event.value;
@@ -83,10 +78,22 @@ export class SurveyComponent {
     this.userAnswers.push(this.selectedAnswer3);
   }
 
+  openDialog(): void {
+    this.onVacationButtonClick();
+    console.log(this.vacation);
+    const dialogRef = this.dialog.open(DialogComponent, {
+      width: '250px',
+      data: {vacation: this.vacation}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
   decideVacation() {
     if (this.userAnswers.includes(this.answers1[0]) && this.userAnswers.includes(this.answers2[0]) && this.userAnswers.includes(this.answers3[0])) {
       this.vacation = 'Bali, Indonesia';
-      this.getLocationByName('Bali');
     } else if (this.userAnswers.includes(this.answers1[0]) && this.userAnswers.includes(this.answers2[0]) && this.userAnswers.includes(this.answers3[1])) {
       this.vacation = 'Dubai, UAE';
     } else if (this.userAnswers.includes(this.answers1[0]) && this.userAnswers.includes(this.answers2[1]) && this.userAnswers.includes(this.answers3[0])) {
@@ -114,8 +121,32 @@ export class SurveyComponent {
   }
 
   onVacationButtonClick() {
-    console.log(this.userAnswers.toString())
+    this.clear();
+    console.log(this.userAnswers.toString());
     this.decideVacation();
+  }
+
+  clear() {
+    this.q1 = null;
+    this.q2 = null;
+    this.q3 = null;
+  }
+}
+
+@Component({
+  selector: `app-dialog-component`,
+  templateUrl: './surveyDialog.html'
+})
+export class DialogComponent {
+  //
+  constructor(
+    public dialogRef: MatDialogRef<DialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+  }
+
+  onNoClick(): void {
+    console.log(this.data)
+    this.dialogRef.close();
   }
 
 }

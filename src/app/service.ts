@@ -32,7 +32,9 @@ export class Service {
   }
 
   getLocationByName(locName) {
-    return this.database.collection('location').doc(locName).snapshotChanges();
+    return this.database.collection('location', ref => ref.where('nameToSearch', '>=', locName)
+      .where('nameToSearch', '<=', locName + '\uf8ff'))
+      .snapshotChanges();
   }
 
   getLocations() {
@@ -53,10 +55,6 @@ export class Service {
     return this.database.collection('images').doc(locationID).snapshotChanges();
   }
 
-  getLocations() {
-    return this.database.collection('location').snapshotChanges();
-  }
-
   createUser(value) {
     return this.database.collection('users').add({
       firstName: value.firstName,
@@ -64,13 +62,14 @@ export class Service {
       email: value.email
     });
   }
-  createComments(commentValue){
+
+  createComments(commentValue) {
     return this.database.collection('comments').add({
       firstName: commentValue.firstName,
       lastName: commentValue.lastName,
       comments: commentValue.comments
     });
-      }
+  }
 
   getAllComments() {
     return this.database.collection('comments').snapshotChanges();

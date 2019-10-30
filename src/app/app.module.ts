@@ -19,7 +19,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SurveyComponent } from './survey/survey.component';
+import {DialogComponent, SurveyComponent} from './survey/survey.component';
 import { RouterModule, Routes } from '@angular/router';
 import { QuestionFormComponent } from './question-form/question-form.component';
 import { HomeComponent } from './home/home.component';
@@ -27,7 +27,15 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {UserComponent} from './user/user.component';
-import {MatFormFieldModule, MatInputModule, MatRadioModule, MatSelectModule} from '@angular/material';
+import {
+  MatCardModule,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatRadioModule,
+  MatSelectModule,
+  MatStepperModule
+} from '@angular/material';
 import * as firebase from 'firebase';
 import { FilterPipe } from './filter.pipe';
 
@@ -60,6 +68,7 @@ firebase.initializeApp(environment.firebaseConfig);
     UserComponent,
     FilterPipe,
     UserComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -76,9 +85,13 @@ firebase.initializeApp(environment.firebaseConfig);
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    MatStepperModule,
+    MatDialogModule,
+    MatCardModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogComponent],
 })
 export class AppModule { }

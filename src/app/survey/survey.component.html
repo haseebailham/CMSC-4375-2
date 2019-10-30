@@ -1,3 +1,46 @@
+<mat-vertical-stepper>
+  <mat-step label="Question 1">
+    <mat-radio-group [(ngModel)]="q1"
+      aria-labelledby="example-radio-group-label"
+      class="example-radio-group" (change)="answer1Event($event)">
+      <p>{{question1}}</p>
+      <mat-radio-button class="example-radio-button" *ngFor="let answer of answers1" [value]="answer">
+        {{answer}}
+      </mat-radio-button>
+    </mat-radio-group>
+    <button mat-button matStepperNext>Next</button>
+  </mat-step>
+  <mat-step label="Question 2">
+    <mat-radio-group [(ngModel)]="q2"
+      aria-labelledby="example-radio-group-label"
+      class="example-radio-group" (change)="answer2Event($event)">
+      <p>{{question2}}</p>
+      <mat-radio-button class="example-radio-button" *ngFor="let answer of answers2" [value]="answer">
+        {{answer}}
+      </mat-radio-button>
+    </mat-radio-group>
+    <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext>Next</button>
+  </mat-step>
+  <mat-step label="Question 3">
+    <mat-radio-group [(ngModel)]="q3"
+      aria-labelledby="example-radio-group-label"
+      class="example-radio-group" (change)="answer3Event($event)">
+      <p>{{question3}}</p>
+      <mat-radio-button class="example-radio-button" *ngFor="let answer of answers3" [value]="answer">
+        {{answer}}
+      </mat-radio-button>
+    </mat-radio-group>
+    <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext>Next</button>
+  </mat-step>
+  <mat-step label="Submit Survey!">
+
+    <button (click)="openDialog()">Decide Vacation</button>
+    <button mat-button matStepperPrevious>Back</button>
+  </mat-step>
+</mat-vertical-stepper>
+<!--
 <label id="example-radio-group-label">Survey</label>
 <form [formGroup]="answersForm" (ngSubmit)="onVacationButtonClick(answersForm.value)">
 
@@ -29,12 +72,8 @@
   </mat-radio-group>
   <button (click)="onVacationButtonClick()">Decide Vacation</button>
 </form>
-The location you should go to is :
+-->
 
-<h1>
-  <div *ngFor="let loc of locToGo">
-  </div>
-</h1>
 <!--
 
 <p>{{question1}}</p>
