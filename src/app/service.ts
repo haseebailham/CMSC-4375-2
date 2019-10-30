@@ -31,6 +31,14 @@ export class Service {
     return this.database.collection('users').snapshotChanges();
   }
 
+  getLocationByName(locName) {
+    return this.database.collection('location').doc(locName).snapshotChanges();
+  }
+
+  getLocations() {
+    return this.database.collection('location').snapshotChanges();
+  }
+
   // searchUsers(searchValue){
   //   return this.database.collection('users',ref => ref.where('nameToSearch', '>=', searchValue)
   //     .where('nameToSearch', '<=', searchValue + '\uf8ff'))

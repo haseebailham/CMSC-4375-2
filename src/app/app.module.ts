@@ -27,7 +27,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {UserComponent} from './user/user.component';
-import {MatFormFieldModule, MatInputModule, MatSelectModule} from '@angular/material';
+import {MatFormFieldModule, MatInputModule, MatRadioModule, MatSelectModule} from '@angular/material';
 import * as firebase from 'firebase';
 
 firebase.initializeApp(environment.firebaseConfig);
@@ -56,7 +56,7 @@ const appRoutes: Routes = [
     FeedbackComponent,
     LoginComponent,
     RegisterComponent,
-    UserComponent
+    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,6 +73,7 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

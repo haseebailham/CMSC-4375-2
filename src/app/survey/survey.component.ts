@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {Service} from '../service';
 
 @Component({
   selector: 'app-survey',
@@ -7,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SurveyComponent {
   userAnswers = [];
+
   question1 = 'Which continent do you want to travel to?';
   selectedAnswer1 = '';
   answers1 = [
@@ -29,26 +32,61 @@ export class SurveyComponent {
     '$-$$',
     '$$$-$$$$'
   ];
+  questions = [this.question1, this.question2, this.question3];
+  answers = [this.answers1, this.answers2, this.answers3];
+
+  answersForm = new FormGroup({
+    answer1: new FormControl(''),
+    answer2: new FormControl(''),
+  });
+  answer1Form: FormGroup;
+  private locList;
+  private locToGo;
+
+  constructor(
+    private fb: FormBuilder, private service: Service
+  ) {
+    this.createForm();
+    this.getLocations();
+  }
+
+  getLocations = () => {
+    return this.service
+      .getLocations()
+      .subscribe(res => (this.locList = res));
+  }
+  getLocationByName(locName) {
+    return this.service
+      .getLocationByName(locName)
+      .subscribe(res => (this.locToGo = res));
+  }
+  createForm() {
+    this.answer1Form = this.fb.group({
+      answer11: ['', Validators.required],
+      answer12: ['', Validators.required],
+      answer13: ['', Validators.required]
+    });
+  }
 
   answer1Event(event: any) {
-    this.selectedAnswer1 = event.target.value;
+    this.selectedAnswer1 = event.value;
     this.userAnswers.push(this.selectedAnswer1);
   }
 
   answer2Event(event: any) {
-    this.selectedAnswer2 = event.target.value;
+    this.selectedAnswer2 = event.value;
     this.userAnswers.push(this.selectedAnswer2);
   }
 
   answer3Event(event: any) {
-    this.selectedAnswer3 = event.target.value;
+    this.selectedAnswer3 = event.value;
     this.userAnswers.push(this.selectedAnswer3);
   }
-
 
   decideVacation() {
     if (this.userAnswers.includes(this.answers1[0]) && this.userAnswers.includes(this.answers2[0]) && this.userAnswers.includes(this.answers3[0])) {
       this.vacation = 'Bali, Indonesia';
+      this.getLocationByName('Bali');
     } else if (this.userAnswers.includes(this.answers1[0]) && this.userAnswers.includes(this.answers2[0]) && this.userAnswers.includes(this.answers3[1])) {
       this.vacation = 'Dubai, UAE';
     } else if (this.userAnswers.includes(this.answers1[0]) && this.userAnswers.includes(this.answers2[1]) && this.userAnswers.includes(this.answers3[0])) {
@@ -74,7 +112,9 @@ export class SurveyComponent {
     }
 
   }
+
   onVacationButtonClick() {
+    console.log(this.userAnswers.toString())
     this.decideVacation();
   }
 
