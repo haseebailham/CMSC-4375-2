@@ -49,6 +49,13 @@ export class Service {
   //   return this.db.collection('users',ref => ref.orderBy('age').startAt(value)).snapshotChanges();
   // }
 
+  getImageLink(locationID) {
+    return this.database.collection('images').doc(locationID).snapshotChanges();
+  }
+
+  getLocations() {
+    return this.database.collection('location').snapshotChanges();
+  }
 
   createUser(value) {
     return this.database.collection('users').add({
@@ -56,5 +63,16 @@ export class Service {
       lastName: value.lastName,
       email: value.email
     });
+  }
+  createComments(commentValue){
+    return this.database.collection('comments').add({
+      firstName: commentValue.firstName,
+      lastName: commentValue.lastName,
+      comments: commentValue.comments
+    });
+      }
+
+  getAllComments() {
+    return this.database.collection('comments').snapshotChanges();
   }
 }
