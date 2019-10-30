@@ -53,7 +53,7 @@ export class LoginComponent {
     })
     // if login is successful we will go to user profile page (change to home?)
       .then(res => {
-          this.router.navigate(['']);
+          this.router.navigate(['/home']);
         },
         err => {
           console.log(err);

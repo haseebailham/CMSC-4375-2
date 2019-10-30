@@ -49,4 +49,15 @@ export class Service {
       email: value.email
     });
   }
+  createComments(commentValue){
+    return this.database.collection('comments').add({
+      firstName: commentValue.firstName,
+      lastName: commentValue.lastName,
+      comments: commentValue.comments
+    });
+      }
+
+  getAllComments() {
+    return this.database.collection('comments').snapshotChanges();
+  }
 }
