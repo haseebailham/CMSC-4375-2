@@ -27,10 +27,6 @@
     "angularfire2": "latest",
     "firebase": "^7.2.2",
     "rxjs": "~6.4.0",
-    "survey-angular": "^1.1.17",
-    "survey-creator": "^1.1.17",
-    "survey-pdf": "^1.1.17",
-    "surveyjs-widgets": "^1.1.17",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

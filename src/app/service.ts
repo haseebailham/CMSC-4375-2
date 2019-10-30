@@ -31,6 +31,14 @@ export class Service {
     return this.database.collection('users').snapshotChanges();
   }
 
+  getLocationByName(locName) {
+    return this.database.collection('location').doc(locName).snapshotChanges();
+  }
+
+  getLocations() {
+    return this.database.collection('location').snapshotChanges();
+  }
+
   // searchUsers(searchValue){
   //   return this.database.collection('users',ref => ref.where('nameToSearch', '>=', searchValue)
   //     .where('nameToSearch', '<=', searchValue + '\uf8ff'))
@@ -41,6 +49,13 @@ export class Service {
   //   return this.db.collection('users',ref => ref.orderBy('age').startAt(value)).snapshotChanges();
   // }
 
+  getImageLink(locationID) {
+    return this.database.collection('images').doc(locationID).snapshotChanges();
+  }
+
+  getLocations() {
+    return this.database.collection('location').snapshotChanges();
+  }
 
   createUser(value) {
     return this.database.collection('users').add({
