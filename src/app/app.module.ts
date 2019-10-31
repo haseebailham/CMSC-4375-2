@@ -19,6 +19,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { AppRoutingModule } from './app-routing.module';
+// @ts-ignore
 import {DialogComponent, SurveyComponent} from './survey/survey.component';
 import { QuestionFormComponent } from './question-form/question-form.component';
 import { HomeComponent } from './home/home.component';
