@@ -10,6 +10,22 @@
   <a routerLink="/blogs" routerLinkActive="active">Blog</a>
 </nav>
 
-<div></div>
+<title>FAQ</title>
+<body>Frequently Asked Questions</body>
 
-<p>Don't see your question listed? Submit one here!</p>
+<div>Q: How often are new locations added to the site?</div>
+<div>A: We don't have a set schedule yet, but head on over to *Feedback* to submit ideas!</div>
+
+<div>Q: What locations are currently on the survey?</div>
+<div>A: Check out *Location Information* to browse our current vacation destination sites!</div>
+
+<div>Q: Really love the site, can I learn more about the team who made it?</div>
+<div>A: Pathfinder Travel's staff information can be found *here*</div>
+
+<div>Don't see your question? Submit one here!</div>
+<div [formGroup]="questionForm">
+  Name: <input formControlName="name"><br>
+  Email: <input formControlName="email"><br>
+  Question: <input formControlName="question"><br>
+  <input type="button" (click)="onClickAddQuestion(questionForm.value)" value = "Submit Question">
+</div>
