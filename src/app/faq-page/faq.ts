@@ -1,3 +1,1 @@
-export class Faq{
-
-}
+export class Faq {}

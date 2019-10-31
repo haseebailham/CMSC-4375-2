@@ -10,7 +10,6 @@ import {Service} from '../service';
 })
 export class FeedbackComponent implements OnInit {
 feedbackForm: FormGroup;
-  // private comments: AngularFirestoreCollection<unknown>;
   private commentList;
   constructor(private formBuilder: FormBuilder,
               private route: Router,
@@ -36,5 +35,4 @@ feedbackForm: FormGroup;
       this.readyForNextComment();
     });
   }
-
 }

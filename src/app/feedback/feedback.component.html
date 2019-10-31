@@ -17,10 +17,3 @@
   Comments: <input formControlName="comments"><br>
   <input type="button" (click)="onClickAddComments(feedbackForm.value)" value = "Add Comments">
 </div>
-<p>Check out what other users have said about our services!</p>
-<!--will fix formatting-->
-<p *ngFor="let commentList of commentList">
-{{commentList.payload.doc.data().firstName}}
-{{commentList.payload.doc.data().lastName}}
-{{commentList.payload.doc.data().comments}}
-</p>
