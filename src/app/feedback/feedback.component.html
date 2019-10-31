@@ -1,11 +1,14 @@
 <app-navbar></app-navbar>
+<br>
 <div [formGroup]="feedbackForm">
-  First Name: <input formControlName="firstName" class = "name"><br>
-  Last Name: <input formControlName="lastName" class = "name"><br>
-  Comments: <input formControlName="comments" class="feedback"><br>
+      First Name: <input formControlName="firstName" class = "name"><br>
+      Last Name: <input formControlName="lastName" class = "name"><br>
+      Comments: <input formControlName="comments" class="feedback"><br>
   <button mat-stroked-button color="primary" (click)="onClickAddComments(feedbackForm.value)" >Add Comments</button>
 </div>
 <h3 *ngFor="let commentList of commentList">
+  <mat-card>
   <h4>{{commentList.payload.doc.data().firstName}}  {{commentList.payload.doc.data().lastName}}</h4>
   <p>{{commentList.payload.doc.data().comments}}</p>
+  </mat-card>
 </h3>

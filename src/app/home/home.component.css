@@ -1,13 +1,13 @@
 h1{
   font-family: "Century Gothic";
   color: darkslateblue;
-  font-size: large;
+  font-size: larger;
   text-align: center;
 }
 h2{
   font-family: "Century Gothic";
   color: darkslateblue;
-  font-size: medium;
+  font-size: large;
   text-align: center;
 }
 mat-card{
@@ -18,4 +18,8 @@ mat-card{
 .button{
   margin-right: 20px;
   margin-bottom: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: medium;
 }
+

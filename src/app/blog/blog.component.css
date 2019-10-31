@@ -1,5 +1,7 @@
 a {
   font-family: "Century Gothic";
+  font-size: large;
   color: cornflowerblue;
-  text-align: -moz-center;
+  text-align: center;
+  padding-left: 50px;
 }

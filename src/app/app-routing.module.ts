@@ -15,11 +15,12 @@ import {Blog1Component} from './blog/blog1/blog1.component';
 import {Blog2Component} from './blog/blog2/blog2.component';
 import {Blog3Component} from './blog/blog3/blog3.component';
 import {Blog4Component} from './blog/blog4/blog4.component';
+import {FaqComponent} from './faq-page/faq.component';
 const routes: Routes = [
   { path: 'survey', component: SurveyComponent },
   { path: 'about',      component: AboutPageComponent },
   { path: 'locations',      component: LocationPageComponent },
-  { path: 'faq',      component: QuestionFormComponent },
+  { path: 'faq',      component: FaqComponent },
   { path: 'home',      component: HomeComponent },
   { path: 'feedback',      component: FeedbackComponent },
   { path: 'register',      component: RegisterComponent },
