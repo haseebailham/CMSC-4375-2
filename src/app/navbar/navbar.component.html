@@ -1,3 +1,20 @@
+<mat-toolbar color="primary">
+  <span class="title">Vacation Destination</span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+
+  <span>
+    <button mat-raised-button (click)="goHome()">Home</button>
+    <button mat-raised-button (click)="goSurvey()">Survey</button>
+    <button mat-raised-button (click)="goLocation()">All Locations</button>
+    <button mat-raised-button (click)="goBlog()">Blog</button>
+    <button mat-raised-button (click)="goFeedback()">Feedback and Comments</button>
+     <button mat-raised-button (click)="goFeedback()">FAQ</button>
+    <button mat-raised-button (click)="goAbout()">About Us</button>
+  </span>
+</mat-toolbar>
+<!--
 <mat-nav-list>
   <a routerLink="/home" routerLinkActive="active">Home</a>
   <a routerLink="/survey" routerLinkActive="active">Survey</a>
@@ -7,3 +24,4 @@
   <a routerLink="/feedback" routerLinkActive="active">Feedback and Comments</a>
   <a routerLink="/blogs" routerLinkActive="active">Blog</a>
 </mat-nav-list>
+-->

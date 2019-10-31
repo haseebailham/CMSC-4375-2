@@ -1,8 +1,24 @@
-mat-nav-list{
+.mat-nav-list{
   font-family: "Century Gothic";
   color: darkslateblue;
 }
-a{
+.mat-toolbar{
+  font-family: "Century Gothic";
+  color: darkslateblue;
+}
+.a{
   padding: 20px;
   text-align: center;
+}
+.example-fill-remaining-space {
+  /* This fills the remaining space, by using flexbox.
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+.title {
+  color: white;
+  font-size: x-large;
+}
+.mat-raised-button {
+
 }
