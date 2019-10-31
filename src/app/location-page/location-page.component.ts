@@ -10,9 +10,17 @@ import {Location} from "./location";
 export class LocationPageComponent implements OnInit {
 
   // Local data for search in Locations page:
-  dataset = ['Bali, Indonesia', 'Dubai, UAE', 'Srinagar, India', 'Crete, Greece', 'Rome, Italy',
-    'Copenhagen, Denmark', 'Interlaken, Switzerland', 'Miami, US', 'Cancun, Mexico',
-    'Alberta, Canada', 'Anchorage, US'];
+  dataset = ['Bali, Indonesia - Climate: Hot, Cost: $-$$, Continent: Asia, Landscape: Island',
+    'Dubai, UAE - Climate: Hot, Cost: $$$-$$$$, Continent: Asia, Landscape: Urban',
+    'Srinagar, India - Climate: Cold, Cost: $-$$, Continent: Asia, Landscape: Mountains',
+    'Crete, Greece - Climate: Hot, Cost: $-$$, Continent: Europe, Landscape: Beach',
+    'Rome, Italy - Climate: Hot, Cost: $$$-$$$$, Continent: Europe, Landscape: Urban',
+    'Copenhagen, Denmark - Climate: Cold, Cost: $-$$, Continent: Europe, Landscape: Urban',
+    'Interlaken, Switzerland - Climate: Cold, Cost: $$$-$$$$, Continent: Europe, Landscape: Mountains',
+    'Miami, US - Climate: Hot, Cost: $-$$, Continent: Americas, Landscape: Urban',
+    'Cancun, Mexico - Climate: Hot, Cost: $$$-$$$$, Continent: Americas, Landscape: Beach',
+    'Alberta, Canada - Climate: Cold, Cost: $-$$, Continent: Americas, Landscape: Mountains',
+    'Anchorage, US - Climate: Cold, Cost: $$$-$$$$, Continent: Americas, Landscape: Mountains'];
   locationList;
   locationString;
   searchText: string;
