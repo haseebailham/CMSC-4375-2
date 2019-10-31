@@ -1,33 +1,45 @@
-<mat-card class="example-card">
-  <mat-card-header>
-    <mat-card-title>Register</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
+<mat-toolbar color="primary">
+  <span>Vacation Destination</span>
 
-    <form class="login-form" [formGroup]="registerForm" (ngSubmit)="tryRegister(registerForm.value)">
-      <table class="example-full-width" cellspacing="0">
-        <tr>
-          <td>
-            <mat-form-field>
-              <input matInput class="full-width" placeholder="Email Address" formControlName="email" required>
-            </mat-form-field>
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
 
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <mat-form-field>
-              <input matInput class="full-width" placeholder="Password" type="password" formControlName="password"
-                     required>
-            </mat-form-field>
-          </td>
-        </tr>
-        <button [disabled]="!registerForm.valid" md-raised-button>Register!</button>
-        <button type="button" class="btn btn-danger btn-block" (click)="tryGoogleLogin()">Register with Google</button>
-        <button type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">Register with Facebook
+  <span></span>
+</mat-toolbar>
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title class="content" >Register</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="content">
+  <form class="login-form" [formGroup]="registerForm" (ngSubmit)="tryRegister(registerForm.value)">
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field>
+            <input matInput class="full-width" placeholder="Email Address" formControlName="email" required>
+          </mat-form-field>
+
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field>
+            <input matInput class="full-width" placeholder="Password" type="password" formControlName="password"
+                   required>
+          </mat-form-field>
+        </td>
+      </tr>
+      <mat-card-footer>
+        <button mat-raised-button color="primary" [disabled]="!registerForm.valid" md-raised-button>Register!</button>
+        <button mat-raised-button color="primary" type="button" class="btn btn-danger btn-block"
+                (click)="tryGoogleLogin()">Register with Google
         </button>
+        <button mat-raised-button color="primary" type="button" class="btn btn-primary btn-block"
+                (click)="tryFacebookLogin()">Register with Facebook
+        </button>
+      </mat-card-footer>
+    </table>
+  </form>
 
-      </table>
-    </form>
-  </mat-card-content>
+</mat-card-content>
 </mat-card>

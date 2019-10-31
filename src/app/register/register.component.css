@@ -1,0 +1,23 @@
+.body {
+  padding: 40px;
+  margin: auto;
+  border: blue;
+}
+.card {
+  margin: 0 auto;
+  width: 26%;
+}
+.main-div{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header {
+  text-align: center;
+  display: flex;
+
+}
+.content {
+  text-align: center;
+}

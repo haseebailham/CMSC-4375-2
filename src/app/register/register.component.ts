@@ -3,6 +3,8 @@ import {Router, Params} from '@angular/router';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthserviceService} from '../shared/authservice.service';
 import * as firebase from 'firebase';
+import {ErrorComponent} from "../shared/error.component";
+import {MatDialog} from "@angular/material";
 
 @Component({
   selector: 'app-register',
@@ -18,11 +20,17 @@ export class RegisterComponent {
   constructor(
     public authserviceService: AuthserviceService,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private  dialog: MatDialog
   ) {
     this.createForm();
   }
-
+  clearForm() {
+    this.registerForm = this.fb.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
   createForm() {
     this.registerForm = this.fb.group({
       email: ['', Validators.required],
@@ -64,6 +72,12 @@ export class RegisterComponent {
         // error in login to console
         err => {
           console.log(err);
+          this.clearForm();
+          this.dialog.open(ErrorComponent, {
+            data: {
+              message: 'That Email is already in use!'
+            }
+          });
           this.errorMessage = err.message;
           this.successMessage = '';
         });

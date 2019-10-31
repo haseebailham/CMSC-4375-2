@@ -34,7 +34,7 @@ import {
   MatInputModule,
   MatRadioModule,
   MatSelectModule,
-  MatStepperModule
+  MatStepperModule, MatToolbarModule
 } from '@angular/material';
 import * as firebase from 'firebase';
 import { FilterPipe } from './filter.pipe';
@@ -44,6 +44,7 @@ import {Blog1Component} from './blog/blog1/blog1.component';
 import {Blog2Component} from './blog/blog2/blog2.component';
 import {Blog3Component} from './blog/blog3/blog3.component';
 import {Blog4Component} from './blog/blog4/blog4.component';
+import {ErrorComponent} from './shared/error.component';
 
 firebase.initializeApp(environment.firebaseConfig);
 
@@ -72,7 +73,8 @@ firebase.initializeApp(environment.firebaseConfig);
     Blog1Component,
     Blog2Component,
     Blog3Component,
-    Blog4Component
+    Blog4Component,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
@@ -91,10 +93,11 @@ firebase.initializeApp(environment.firebaseConfig);
     MatStepperModule,
     MatDialogModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [DialogComponent],
+  entryComponents: [DialogComponent, ErrorComponent],
 })
 export class AppModule { }

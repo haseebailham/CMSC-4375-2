@@ -3,6 +3,8 @@ import {Router, Params} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthserviceService} from '../shared/authservice.service';
 import * as firebase from 'firebase';
+import {MatDialog} from "@angular/material";
+import {ErrorComponent} from "../shared/error.component";
 
 @Component({
   selector: 'app-login',
@@ -17,9 +19,17 @@ export class LoginComponent {
   constructor(
     public authserviceService: AuthserviceService,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private  dialog: MatDialog
   ) {
     this.createForm();
+  }
+
+  clearForm() {
+    this.loginForm = this.fb.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    });
   }
 
   createForm() {
@@ -56,6 +66,12 @@ export class LoginComponent {
           this.router.navigate(['/home']);
         },
         err => {
+          this.clearForm();
+          this.dialog.open(ErrorComponent, {
+            data: {
+              message: 'Your login Infomation is Incorrect!'
+            }
+          });
           console.log(err);
           this.errorMessage = err.message;
         });

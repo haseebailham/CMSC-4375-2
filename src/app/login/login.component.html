@@ -1,4 +1,11 @@
+<mat-toolbar color="primary">
+  <span>Vacation Destination</span>
 
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+
+  <span></span>
+</mat-toolbar>
 <mat-card class="example-card">
   <mat-card-header>
     <mat-card-title>Login</mat-card-title>
@@ -23,9 +30,9 @@
             </mat-form-field>
           </td>
         </tr>
-        <button [disabled]="!loginForm.valid" md-raised-button>Login</button>
-        <button type="button" class="btn btn-danger btn-block" (click)="tryGoogleLogin()">Login with Google</button>
-        <button type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">Login with Facebook
+        <button mat-raised-button color="primary"  [disabled]="!loginForm.valid" md-raised-button>Login</button>
+        <button mat-raised-button color="primary" (click)="tryGoogleLogin()">Login with Google</button>
+        <button mat-raised-button color="primary" (click)="tryFacebookLogin()">Login with Facebook
         </button>
 
 
