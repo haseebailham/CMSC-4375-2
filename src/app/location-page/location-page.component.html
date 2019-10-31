@@ -3,7 +3,7 @@
 <div class="md-form">
   <input type="search" [(ngModel)]="searchText" placeholder="Search location here">
 </div>
-<ul *ngFor="let data of dataset | filter: searchText">
+<ul *ngFor="let data of dataset | filter: searchText let i=index">
   <li>{{data}}</li>
 </ul>
 

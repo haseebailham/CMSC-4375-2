@@ -41,4 +41,18 @@ export class LocationPageComponent implements OnInit {
     // loop
     this.locationString.forEach((name, index) => this.locationString[index] = this.locationList.payload.doc.data().City);
   }
+
+  getInfo(location) {
+    if (location.equals('Bali, Indonesia')) {
+      return 'Climate: Hot; Continent: Asia; Cost: $-$$; Landscape: Island';
+    } else if (location.equals('Dubai, UAE')) {
+      return 'Climate:Hot; Continent: Asia; Cost: $$$-$$$$; Landscape: Urban';
+    } else if (location.equals('Srinagar, India')) {
+      return 'Climate:Cold; Continent:Asia; Cost: $-$$; Landscape: Mountains';
+    } else if (location.equals('Crete, Greece')) {
+      return 'Climate:Cold; Continent:Europe; Cost: $-$$; Landscape: Mountains';
+    } else {
+      return '';
+    }
+  }
 }
