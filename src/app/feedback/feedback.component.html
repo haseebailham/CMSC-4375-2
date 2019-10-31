@@ -1,7 +1,11 @@
 <app-navbar></app-navbar>
 <div [formGroup]="feedbackForm">
-  First Name: <input formControlName="firstName"><br>
-  Last Name: <input formControlName="lastName"><br>
-  Comments: <input formControlName="comments"><br>
-  <input type="button" (click)="onClickAddComments(feedbackForm.value)" value = "Add Comments">
+  First Name: <input formControlName="firstName" class = "name"><br>
+  Last Name: <input formControlName="lastName" class = "name"><br>
+  Comments: <input formControlName="comments" class="feedback"><br>
+  <button mat-stroked-button color="primary" (click)="onClickAddComments(feedbackForm.value)" >Add Comments</button>
 </div>
+<h3 *ngFor="let commentList of commentList">
+  <h4>{{commentList.payload.doc.data().firstName}}  {{commentList.payload.doc.data().lastName}}</h4>
+  <p>{{commentList.payload.doc.data().comments}}</p>
+</h3>

@@ -1,0 +1,14 @@
+.feedback{
+  padding-top: 10px;
+  width: 300px;
+  height: 100px;
+}
+h4{
+  font-family: "Century Gothic";
+  color: darkslateblue;
+}
+p{
+  font-family: "Century Gothic";
+  font-size: small;
+  color: cornflowerblue;
+}
