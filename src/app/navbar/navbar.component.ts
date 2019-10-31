@@ -33,7 +33,7 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/blogs']);
   }
   goLocation() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/locations']);
   }
 
 }
