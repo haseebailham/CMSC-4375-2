@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {Router} from '@angular/router';
 import {Service} from '../../service';
 
@@ -10,8 +10,7 @@ import {Service} from '../../service';
 export class Blog3Component {
 
   private blogList;
-  constructor(private route: Router,
-              public blogService: Service) {
+  constructor(public blogService: Service) {
     this.blogList = this.blogService.getBlogTitles().subscribe(res => (this.blogList = res));
   }
 

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
 import {Service} from '../service';
 
 @Component({
@@ -7,16 +6,10 @@ import {Service} from '../service';
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.css']
 })
-export class BlogComponent implements OnInit {
+export class BlogComponent {
 private blogList;
-  constructor(private route: Router,
-              public blogService: Service) {
+  constructor(public blogService: Service) {
     this.blogList = this.blogService.getBlogTitles().subscribe(res => (this.blogList = res));
-  }
-
-  ngOnInit() {
-
-
   }
 
 }

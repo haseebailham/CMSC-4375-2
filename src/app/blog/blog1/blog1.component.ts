@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
 import {Service} from '../../service';
 
 @Component({
@@ -10,8 +9,7 @@ import {Service} from '../../service';
 export class Blog1Component  {
 
   private blogList;
-  constructor(private route: Router,
-              public blogService: Service) {
+  constructor(public blogService: Service) {
     this.blogList = this.blogService.getBlogTitles().subscribe(res => (this.blogList = res));
   }
 }
