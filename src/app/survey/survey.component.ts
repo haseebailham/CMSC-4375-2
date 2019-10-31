@@ -18,6 +18,11 @@ export class SurveyComponent {
   public q1: any;
   public q2: any;
   public q3: any;
+  public q4: any;
+  public q5: any;
+  public q6: any;
+  public q7: any;
+
   question1 = 'Which continent do you want to travel to?';
   selectedAnswer1 = '';
   answers1 = [
@@ -40,7 +45,37 @@ export class SurveyComponent {
     '$-$$',
     '$$$-$$$$'
   ];
-
+  question4 = 'What are you most interested in for your trip?';
+  selectedAnswer4 = '';
+  answers4 = [
+    'Family friendly activities',
+    'Sports',
+    'Night Life',
+    'Nature Walks'
+  ];
+  question5 = 'What would you most likely be doing on your trip?';
+  selectedAnswer5 = '';
+  answers5 = [
+    'Shopping for souvenirs',
+    'Tasting food at different restaurants',
+    'Attending a concert',
+    'Thrill seeking activities'
+  ];
+  question6 = 'How long will your trip likely be?';
+  selectedAnswer6 = '';
+  answers6 = [
+    '1-2 days',
+    'A week',
+    '2-3 weeks',
+    'A month or more'
+  ];
+  question7 = 'Will you be travelling alone?';
+  selectedAnswer7 = '';
+  answers7 = [
+    'Yes',
+    'No, I will be travelling with family',
+    'No, I will be travelling with friends'
+  ];
   private locationList;
   private locToGo;
 
@@ -77,6 +112,27 @@ export class SurveyComponent {
     this.selectedAnswer3 = event.value;
     this.userAnswers.push(this.selectedAnswer3);
   }
+
+  answer4Event(event: any) {
+    this.selectedAnswer4 = event.value;
+    this.userAnswers.push(this.selectedAnswer3);
+  }
+
+  answer5Event(event: any) {
+    this.selectedAnswer5 = event.value;
+    this.userAnswers.push(this.selectedAnswer3);
+  }
+
+  answer6Event(event: any) {
+    this.selectedAnswer6 = event.value;
+    this.userAnswers.push(this.selectedAnswer3);
+  }
+
+  answer7Event(event: any) {
+    this.selectedAnswer7 = event.value;
+    this.userAnswers.push(this.selectedAnswer3);
+  }
+
 
   openDialog(): void {
     this.onVacationButtonClick();
@@ -130,6 +186,10 @@ export class SurveyComponent {
     this.q1 = null;
     this.q2 = null;
     this.q3 = null;
+    this.q4 = null;
+    this.q5 = null;
+    this.q6 = null;
+    this.q7 = null;
   }
 }
 

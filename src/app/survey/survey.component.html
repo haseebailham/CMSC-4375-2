@@ -11,6 +11,7 @@
 </nav>
 
 <mat-vertical-stepper>
+
   <mat-step label="Question 1">
     <mat-radio-group [(ngModel)]="q1"
       aria-labelledby="example-radio-group-label"
@@ -22,6 +23,7 @@
     </mat-radio-group>
     <button mat-button matStepperNext>Next</button>
   </mat-step>
+
   <mat-step label="Question 2">
     <mat-radio-group [(ngModel)]="q2"
       aria-labelledby="example-radio-group-label"
@@ -34,6 +36,7 @@
     <button mat-button matStepperPrevious>Back</button>
     <button mat-button matStepperNext>Next</button>
   </mat-step>
+
   <mat-step label="Question 3">
     <mat-radio-group [(ngModel)]="q3"
       aria-labelledby="example-radio-group-label"
@@ -46,6 +49,59 @@
     <button mat-button matStepperPrevious>Back</button>
     <button mat-button matStepperNext>Next</button>
   </mat-step>
+
+  <mat-step label="Question 4">
+    <mat-radio-group [(ngModel)]="q4"
+                     aria-labelledby="example-radio-group-label"
+                     class="example-radio-group" (change)="answer4Event($event)">
+      <p>{{question4}}</p>
+      <mat-radio-button class="example-radio-button" *ngFor="let answer of answers4" [value]="answer">
+        {{answer}}
+      </mat-radio-button>
+    </mat-radio-group>
+    <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext>Next</button>
+  </mat-step>
+
+  <mat-step label="Question 5">
+    <mat-radio-group [(ngModel)]="q5"
+                     aria-labelledby="example-radio-group-label"
+                     class="example-radio-group" (change)="answer5Event($event)">
+      <p>{{question5}}</p>
+      <mat-radio-button class="example-radio-button" *ngFor="let answer of answers5" [value]="answer">
+        {{answer}}
+      </mat-radio-button>
+    </mat-radio-group>
+    <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext>Next</button>
+  </mat-step>
+
+  <mat-step label="Question 6">
+    <mat-radio-group [(ngModel)]="q6"
+                     aria-labelledby="example-radio-group-label"
+                     class="example-radio-group" (change)="answer6Event($event)">
+      <p>{{question6}}</p>
+      <mat-radio-button class="example-radio-button" *ngFor="let answer of answers6" [value]="answer">
+        {{answer}}
+      </mat-radio-button>
+    </mat-radio-group>
+    <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext>Next</button>
+  </mat-step>
+
+  <mat-step label="Question 7">
+    <mat-radio-group [(ngModel)]="q7"
+                     aria-labelledby="example-radio-group-label"
+                     class="example-radio-group" (change)="answer7Event($event)">
+      <p>{{question7}}</p>
+      <mat-radio-button class="example-radio-button" *ngFor="let answer of answers7" [value]="answer">
+        {{answer}}
+      </mat-radio-button>
+    </mat-radio-group>
+    <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext>Next</button>
+  </mat-step>
+
   <mat-step label="Submit Survey!">
 
     <button (click)="openDialog()">Decide Vacation</button>
