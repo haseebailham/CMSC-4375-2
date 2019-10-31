@@ -31,7 +31,7 @@ import {
   MatCardModule,
   MatDialogModule,
   MatFormFieldModule,
-  MatInputModule,
+  MatInputModule, MatListModule,
   MatRadioModule,
   MatSelectModule,
   MatStepperModule, MatToolbarModule
@@ -45,6 +45,7 @@ import {Blog2Component} from './blog/blog2/blog2.component';
 import {Blog3Component} from './blog/blog3/blog3.component';
 import {Blog4Component} from './blog/blog4/blog4.component';
 import {ErrorComponent} from './shared/error.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 firebase.initializeApp(environment.firebaseConfig);
 
@@ -75,6 +76,7 @@ firebase.initializeApp(environment.firebaseConfig);
     Blog3Component,
     Blog4Component,
     ErrorComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -95,6 +97,7 @@ firebase.initializeApp(environment.firebaseConfig);
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
