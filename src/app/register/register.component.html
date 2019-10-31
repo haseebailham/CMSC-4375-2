@@ -1,10 +1,10 @@
 <mat-card class="example-card">
   <mat-card-header>
-    <mat-card-title>Login</mat-card-title>
+    <mat-card-title>Register</mat-card-title>
   </mat-card-header>
   <mat-card-content>
 
-    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="tryLogin(loginForm.value)">
+    <form class="login-form" [formGroup]="registerForm" (ngSubmit)="tryRegister(registerForm.value)">
       <table class="example-full-width" cellspacing="0">
         <tr>
           <td>
@@ -22,9 +22,9 @@
             </mat-form-field>
           </td>
         </tr>
-        <button [disabled]="!loginForm.valid" md-raised-button>Login</button>
-        <button type="button" class="btn btn-danger btn-block" (click)="tryGoogleLogin()">Login with Google</button>
-        <button type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">Login with Facebook
+        <button [disabled]="!registerForm.valid" md-raised-button>Register!</button>
+        <button type="button" class="btn btn-danger btn-block" (click)="tryGoogleLogin()">Register with Google</button>
+        <button type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">Register with Facebook
         </button>
 
       </table>

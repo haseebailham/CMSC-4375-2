@@ -1,20 +1,4 @@
-<h1 class="header">Login!</h1>
-  <form class="login-form" [formGroup]="loginForm" (ngSubmit)="tryLogin(loginForm.value)">
-  <mat-form-field>
-    <input matInput class="full-width" placeholder="Email Address" formControlName="email" required>
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput class="full-width"  placeholder="Password" formControlName="password" required>
-  </mat-form-field>
-    <button
-      [disabled]="!loginForm.valid"
-      md-raised-button
-    >Login
-    </button>
-    <button type="button" class="btn btn-danger btn-block" (click)="tryGoogleLogin()">Login with Google</button>
-    <button type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">Login with Facebook</button>
-  </form>
-<a  routerLink="/register">Don't have an account? Make one!</a>
+
 <mat-card class="example-card">
   <mat-card-header>
     <mat-card-title>Login</mat-card-title>
@@ -44,7 +28,9 @@
         <button type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">Login with Facebook
         </button>
 
+
       </table>
     </form>
+    <a  routerLink="/register">Don't have an account? Make one!</a>
   </mat-card-content>
 </mat-card>

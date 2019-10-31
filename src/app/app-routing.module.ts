@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'home',      component: HomeComponent },
   { path: 'feedback',      component: FeedbackComponent },
   { path: 'register',      component: RegisterComponent },
-  { path: 'login',      component: LoginComponent },
+  { path: '',      component: LoginComponent },
   { path: 'blogs',      component: BlogComponent },
   { path: 'blog1',      component: Blog1Component },
   { path: 'blog2',      component: Blog2Component },

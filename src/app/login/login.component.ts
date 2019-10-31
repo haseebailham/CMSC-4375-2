@@ -32,7 +32,7 @@ export class LoginComponent {
   tryFacebookLogin() {
     this.authserviceService.doFacebookLogin()
       .then(res => {
-        this.router.navigate(['']);
+        this.router.navigate(['/home']);
       });
   }
 
@@ -40,7 +40,7 @@ export class LoginComponent {
   tryGoogleLogin() {
     this.authserviceService.doGoogleLogin()
       .then(res => {
-        this.router.navigate(['']);
+        this.router.navigate(['/home']);
       });
   }
 
