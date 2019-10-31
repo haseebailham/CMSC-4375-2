@@ -1,4 +1,9 @@
-<mat-nav-list>
+<mat-toolbar color="primary">
+  <span>Application Title</span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+
   <a routerLink="/survey" routerLinkActive="active">Survey</a>
   <a routerLink="/about" routerLinkActive="active">About Us</a>
   <a routerLink="/locations" routerLinkActive="active">All Locations</a>
@@ -6,4 +11,5 @@
   <a routerLink="/home" routerLinkActive="active">Home</a>
   <a routerLink="/feedback" routerLinkActive="active">Feedback and Comments</a>
   <a routerLink="/blogs" routerLinkActive="active">Blog</a>
-</mat-nav-list>
+
+</mat-toolbar>
