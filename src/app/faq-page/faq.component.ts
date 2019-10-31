@@ -10,10 +10,9 @@ import {Service} from "../service";
 })
 export class FaqComponent implements OnInit {
   questionForm: FormGroup;
-  private commentList;
+  private questionList;
   constructor(private formBuilder: FormBuilder,
-              private route: Router,
-              public fbService: Service) { }
+              public faqService: Service) { }
 
   ngOnInit() {
     this.questionForm = this.formBuilder.group({
@@ -21,7 +20,7 @@ export class FaqComponent implements OnInit {
       email: [''],
       question: ['']
     });
-    this.commentList = this.fbService.getAllComments().subscribe(res => (this.commentList = res));
+    this.questionList = this.faqService.getQuestions().subscribe(res => (this.questionList = res));
   }
   readyForNextQuestion() {
     this.questionForm = this.formBuilder.group({
@@ -31,7 +30,7 @@ export class FaqComponent implements OnInit {
     });
   }
   onClickAddQuestion(questionValue) {
-    this.fbService.createComments(questionValue).then(r => {
+    this.faqService.createQuestions(questionValue).then(r => {
       this.readyForNextQuestion();
     });
   }

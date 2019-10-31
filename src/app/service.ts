@@ -71,11 +71,23 @@ export class Service {
     });
   }
 
+  createQuestions(questionValue) {
+    return this.database.collection('questions').add({
+      name: questionValue.name,
+      email: questionValue.email,
+      question: questionValue.question
+    });
+  }
+
   getAllComments() {
     return this.database.collection('comments').snapshotChanges();
   }
 
   getBlogTitles() {
     return this.database.collection('blogs').snapshotChanges();
+  }
+
+  getQuestions() {
+    return this.database.collection('questions').snapshotChanges();
   }
 }
