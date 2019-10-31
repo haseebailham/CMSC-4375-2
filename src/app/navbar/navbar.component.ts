@@ -18,19 +18,19 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/home']);
   }
   goSurvey() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/survey']);
   }
   goFeedback() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/feedback']);
   }
   goAbout() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/about']);
   }
   goFAQ() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/faq']);
   }
   goBlog() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/blogs']);
   }
   goLocation() {
     this.router.navigate(['/home']);
