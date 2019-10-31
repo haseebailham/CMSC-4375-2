@@ -27,6 +27,7 @@ import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {UserComponent} from './user/user.component';
 import {
+  MatButtonModule,
   MatCardModule,
   MatDialogModule,
   MatFormFieldModule,
@@ -89,7 +90,8 @@ firebase.initializeApp(environment.firebaseConfig);
     MatRadioModule,
     MatStepperModule,
     MatDialogModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],
