@@ -1,0 +1,13 @@
+h1{
+  font-family: "Century Gothic";
+  color: cornflowerblue;
+  text-align: center;
+}
+p{
+  font-family: "Century Gothic";
+  color: cornflowerblue;
+  text-align: -moz-center;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
