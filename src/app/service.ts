@@ -74,4 +74,8 @@ export class Service {
   getAllComments() {
     return this.database.collection('comments').snapshotChanges();
   }
+
+  getBlogTitles() {
+    return this.database.collection('blogs').snapshotChanges();
+  }
 }
