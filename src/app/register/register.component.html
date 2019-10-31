@@ -1,15 +1,33 @@
-<h1 class="header">Register!</h1>
-<form  [formGroup]="registerForm" (ngSubmit)="tryRegister(registerForm.value)">
-  <mat-form-field>
-    <input matInput  placeholder="Email Address" formControlName="email" required>
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput  placeholder="Password" formControlName="password" required>
-  </mat-form-field>
-  <button
-    [disabled]="!registerForm.valid" md-raised-button (click)="tryRegister(registerForm.value)" >Register</button>
-  <!--
-  <button type="button" class="btn btn-danger btn-block" (click)="tryRegister(registerForm.value)">Register!</button>-->
-  <button type="button" class="btn btn-danger btn-block" (click)="tryGoogleLogin()">Register with Google</button>
-  <button type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">Register with Facebook</button>
-</form>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Login</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="tryLogin(loginForm.value)">
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput class="full-width" placeholder="Email Address" formControlName="email" required>
+            </mat-form-field>
+
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput class="full-width" placeholder="Password" type="password" formControlName="password"
+                     required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <button [disabled]="!loginForm.valid" md-raised-button>Login</button>
+        <button type="button" class="btn btn-danger btn-block" (click)="tryGoogleLogin()">Login with Google</button>
+        <button type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">Login with Facebook
+        </button>
+
+      </table>
+    </form>
+  </mat-card-content>
+</mat-card>

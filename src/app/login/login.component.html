@@ -6,21 +6,28 @@
 
     <form class="login-form" [formGroup]="loginForm" (ngSubmit)="tryLogin(loginForm.value)">
       <table class="example-full-width" cellspacing="0">
-        <mat-form-field>
-          <input matInput class="full-width" placeholder="Email Address" formControlName="email" required>
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput class="full-width" placeholder="Password" formControlName="password" required>
-        </mat-form-field>
-        <button
-          [disabled]="!loginForm.valid"
-          md-raised-button
-        >Login
-        </button>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput class="full-width" placeholder="Email Address" formControlName="email" required>
+            </mat-form-field>
+
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput class="full-width" placeholder="Password" type="password" formControlName="password"
+                     required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <button [disabled]="!loginForm.valid" md-raised-button>Login</button>
         <button type="button" class="btn btn-danger btn-block" (click)="tryGoogleLogin()">Login with Google</button>
         <button type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">Login with Facebook
         </button>
-        </table>
+
+      </table>
     </form>
   </mat-card-content>
 </mat-card>
